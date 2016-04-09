@@ -30,8 +30,8 @@ For instance you have index.blade.php template inside _views/about_ directory. T
 will see content built from your template. What just happend? Long story short - magic. Thanks to that magic you can preview all
 blade templates existing in _views_ directory (with one exception - we'll get back to this soon).
 
-What about second way? Well it's almost the same as the first one but instead of previewing templates in browser,
-you can generate static html files. Just run this command
+What about second way? Well it's almost the same as the first one but instead of previewing templates in browser, you can
+generate static html files. Just run this command
 
     ./vendor/bin/blade build
 

@@ -37,6 +37,26 @@ generate static html files. Just run this command
 
 Static html files are placed in _compiled_ dir. Directory structure is the same as structure inside _views_ dir.
 
+### Usig json to fill templates with data
+
+Writing templates can be pain in the ass, especially when dealing with tables or other repeated data. The code is bloated and
+hard to read. Fortunately you can use json to store data and use it inside blade templates. To do so you need to create json file
+named the same as blade template.
+
+    views
+      index.blade.php
+      index.json
+
+Json file will be parsed and passed to blade template as associative array.
+
+    {
+        "firstname": "John",
+        "lastname": "Doe",
+        "emails": ["mail1@mail.com", "mail2@mail.com"]
+    }
+
+Above data will be visible in blade template as: <code>$firstname</code>, <code>$lastname</code> and <code>$emails</code> array.
+
 ### Conventions
 
 As you might noticed, views directory contains two dirs starting with underscore: _\_layouts_ and _\_partials_.
@@ -50,5 +70,4 @@ these directories are invisible for users and static file builder. You can use t
 Few thing I would like to add to this project:
 
 - clear cached views,
-- pass json objects as template data
 - create example project

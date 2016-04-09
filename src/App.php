@@ -12,6 +12,7 @@ use Illuminate\Events\Dispatcher;
 
 class App
 {
+    protected $viewsDir;
     protected $factory;
 
     public function __construct($viewsDir, $cacheDir)
@@ -32,6 +33,7 @@ class App
         );
 
         $this->factory = $factory;
+        $this->viewsDir = $viewsDir;
     }
     
     public function renderView($view)
@@ -39,6 +41,12 @@ class App
         if (strpos($view, '_') === 0) {
             throw new \InvalidArgumentException('Invalid view');
         }
-        return $this->factory->make($view)->render();
+
+        $data = [];
+        if (file_exists($this->viewsDir.'/'.$view.'.json')) {
+            $data = json_decode(file_get_contents($this->viewsDir.'/'.$view.'.json'), true);
+        }
+
+        return $this->factory->make($view, $data)->render();
     }
 }

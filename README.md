@@ -43,3 +43,12 @@ As you might noticed, views directory contains two dirs starting with underscore
 These dirs and any other dir with name starting with underscore are excluded from building response. In other words
 these directories are invisible for users and static file builder. You can use them to store files like layouts and/or partial content
 (header, footer, etc.).
+
+
+## What's next?
+
+Few thing I would like to add to this project:
+
+- clear cached views,
+- pass json objects as template data
+- create example project

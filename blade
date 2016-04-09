@@ -8,6 +8,6 @@ use BladeBuilder\Commands\Init;
 use Symfony\Component\Console\Application;
 
 $application = new Application();
+$application->add(new Init(null, getcwd()));
 $application->add(new Build(null, getcwd()));
-$application->add(new Init());
 $application->run();

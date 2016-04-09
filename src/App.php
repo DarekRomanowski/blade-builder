@@ -12,6 +12,8 @@ use Illuminate\Events\Dispatcher;
 
 class App
 {
+    protected $factory;
+
     public function __construct($viewsDir, $cacheDir)
     {
         $filesystem = new Filesystem();
@@ -29,7 +31,6 @@ class App
             new Dispatcher()
         );
 
-        $this->filesystem = $filesystem;
         $this->factory = $factory;
     }
     

@@ -38,7 +38,7 @@ class Build extends Command
         foreach (new \RecursiveIteratorIterator($di) as $filename => $file) {
             $filePath = str_replace($this->viewsPath.'/', '', $filename);
 
-            if (strpos($filePath, '_') === 0) {
+            if (strpos($filePath, '_') === 0 || pathinfo($filename, PATHINFO_EXTENSION) == 'json') {
                 continue;
             }
 

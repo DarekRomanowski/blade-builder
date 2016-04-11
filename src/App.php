@@ -14,6 +14,7 @@ class App
 {
     protected $viewsDir;
     protected $factory;
+    protected $filesystem;
 
     public function __construct($viewsDir, $cacheDir)
     {
@@ -34,19 +35,29 @@ class App
 
         $this->factory = $factory;
         $this->viewsDir = $viewsDir;
+        $this->filesystem = $filesystem;
     }
-    
+
     public function renderView($view)
     {
         if (strpos($view, '_') === 0) {
             throw new \InvalidArgumentException('Invalid view');
         }
 
-        $data = [];
-        if (file_exists($this->viewsDir.'/'.$view.'.json')) {
-            $data = json_decode(file_get_contents($this->viewsDir.'/'.$view.'.json'), true);
-        }
+        $data = array_replace(
+            $this->getJsonData('_global.json'),
+            $this->getJsonData($view.'.json')
+        );
 
         return $this->factory->make($view, $data)->render();
+    }
+
+    protected function getJsonData($file)
+    {
+        $data = [];
+        if ($this->filesystem->exists($this->viewsDir.'/'.$file)) {
+            $data = json_decode($this->filesystem->get($this->viewsDir.'/'.$file), true);
+        }
+        return $data;
     }
 }

@@ -4,9 +4,9 @@ Blade Builder is simple yet powerful package that allows you to build static web
 Yes, by saying blade I mean Laravel blade templates. There are two ways of using this package. We'll get to this
 in usage section.
 
-## Instalation
+## Installation
 
-You will be needing composer in order to use Blade Builer.
+You will be needing composer in order to use Blade Builder.
 
     composer require wilgucki/blade-builder
 
@@ -27,7 +27,7 @@ In both cases you need to create blade templates inside _views_ directory (feel 
 writing your blade template, you can preview it in browser. Just type address you've configured for this project followed by
 template name. If you created some subdirectories, you need to use them as part of an address.
 For instance you have index.blade.php template inside _views/about_ directory. Type http://your-address/about/index and you
-will see content built from your template. What just happend? Long story short - magic. Thanks to that magic you can preview all
+will see content built from your template. What just happened? Long story short - magic. Thanks to that magic you can preview all
 blade templates existing in _views_ directory (with one exception - we'll get back to this soon).
 
 What about second way? Well it's almost the same as the first one but instead of previewing templates in browser, you can
@@ -37,7 +37,7 @@ generate static html files. Just run this command
 
 Static html files are placed in _compiled_ dir. Directory structure is the same as structure inside _views_ dir.
 
-### Usig json to fill templates with data
+### Using json to fill templates with data
 
 Writing templates can be pain in the ass, especially when dealing with tables or other repeated data. The code is bloated and
 hard to read. Fortunately you can use json to store data and use it inside blade templates. To do so you need to create json file
@@ -56,6 +56,10 @@ Json file will be parsed and passed to blade template as associative array.
     }
 
 Above data will be visible in blade template as: <code>$firstname</code>, <code>$lastname</code> and <code>$emails</code> array.
+
+But what if you want to populate more than one template with the same data? Instead of creating bunch od json files, 
+you can use _\_global.json_ file. If exists this file is attached to all of blade templates. The contents of template json file
+are merged with _\_global.json_ so you are able to overwrite global values.
 
 ### Conventions
 

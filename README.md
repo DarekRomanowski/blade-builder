@@ -70,7 +70,7 @@ these directories are invisible for users and static file builder. You can use t
 
 ## Example
 
-Example dir contains simple web page built on Bootstrap Starter Template. Check it out to find out one of many ways how
+Example dir contains simple web page built on top of Bootstrap Starter Template. Check it out to find out one of many ways how
 to use Blade Builder.
 
 ## What's next?

@@ -19,9 +19,10 @@ class AppTest extends \PHPUnit_Framework_TestCase
                 ],
                 'test.blade.php' => '@extends("_layouts.app")'.PHP_EOL.'@section("content") content @endsection',
                 'test2.blade.php' =>
-                    '{{ $firstname }} {{ $lastname }}<br> @foreach($emails as $email) {{ $email }}<br> @endforeach',
+                    '{{ $firstname }} {{ $middlename }} {{ $lastname }}<br> @foreach($emails as $email) {{ $email }}<br> @endforeach',
                 'test2.json' =>
-                    '{"firstname": "John", "lastname": "Doe", "emails": ["mail1@mail.com", "mail2@mail.com"]}'
+                    '{"firstname": "John", "lastname": "Doe", "emails": ["mail1@mail.com", "mail2@mail.com"]}',
+                '_global.json' => '{"firstname": "Bob", "middlename": "Mike"}'
             ],
             'cache' => [],
             'compiled' => []
@@ -58,7 +59,7 @@ class AppTest extends \PHPUnit_Framework_TestCase
         
         $view = $app->renderView('test2');
 
-        $this->assertRegExp('/John Doe/', $view);
+        $this->assertRegExp('/John Mike Doe/', $view);
         $this->assertRegExp('/mail1@mail.com/', $view);
         $this->assertRegExp('/mail2@mail.com/', $view);
     }

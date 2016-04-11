@@ -68,10 +68,14 @@ These dirs and any other dir with name starting with underscore are excluded fro
 these directories are invisible for users and static file builder. You can use them to store files like layouts and/or partial content
 (header, footer, etc.).
 
+## Example
+
+Example dir contains simple web page built on Bootstrap Starter Template. Check it out to find out one of many ways how
+to use Blade Builder.
 
 ## What's next?
 
 Few thing I would like to add to this project:
 
 - clear cached views,
-- create example project
+- delete compiled files that aren't present in views directory

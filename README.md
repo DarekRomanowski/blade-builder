@@ -37,7 +37,7 @@ generate static html files. Just run this command
 
 Static html files are placed in _compiled_ dir. Directory structure is the same as structure inside _views_ dir.
 
-### Usig json to fill templates with data
+### Using json to fill templates with data
 
 Writing templates can be pain in the ass, especially when dealing with tables or other repeated data. The code is bloated and
 hard to read. Fortunately you can use json to store data and use it inside blade templates. To do so you need to create json file

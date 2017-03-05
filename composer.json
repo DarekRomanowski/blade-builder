@@ -5,7 +5,7 @@
   "license": "MIT",
   "bin": ["blade"],
   "require": {
-    "illuminate/view": "^5.2",
+    "illuminate/view": "^5.4",
     "symfony/console": "^3.0"
   },
   "require-dev": {

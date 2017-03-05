@@ -3,11 +3,15 @@
 
 require getcwd().'/vendor/autoload.php';
 
-use BladeBuilder\Commands\Build;
 use BladeBuilder\Commands\Init;
+use BladeBuilder\Commands\Build;
+use BladeBuilder\Commands\ClearCache;
+use BladeBuilder\Commands\ClearCompiled;
 use Symfony\Component\Console\Application;
 
 $application = new Application();
 $application->add(new Init(null, getcwd()));
 $application->add(new Build(null, getcwd()));
+$application->add(new ClearCache(null, getcwd()));
+$application->add(new ClearCompiled(null, getcwd()));
 $application->run();

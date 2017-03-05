@@ -6,7 +6,7 @@ in usage section.
 
 ## Installation
 
-You will be needing composer in order to use Blade Builder.
+First run this composer command
 
     composer require wilgucki/blade-builder
 
@@ -20,8 +20,8 @@ If you want to preview your work, set document root of your web server to _publi
 
 As it was mentioned before, there are two ways of using this package.
 
-1. View files stored in _views_ directory can be accessed via index.php file from browser (only if you configure your web server).
-2. As a static html file generator.
+1. Preview tool for view files stored in _view_ directory (perfect for your frontend team creating htmls for Laravel based project).
+2. Static html file generator.
 
 In both cases you need to create blade templates inside _views_ directory (feel free to create subdirectories). When you are done with
 writing your blade template, you can preview it in browser. Just type address you've configured for this project followed by
@@ -72,10 +72,3 @@ these directories are invisible for users and static file builder. You can use t
 
 Example dir contains simple web page built on top of Bootstrap Starter Template. Check it out to find out one of many ways how
 to use Blade Builder.
-
-## What's next?
-
-Few thing I would like to add to this project:
-
-- clear cached views,
-- delete compiled files that aren't present in views directory
